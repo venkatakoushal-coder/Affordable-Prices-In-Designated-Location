@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommended Products | PriceWise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <h2 class="logo">PriceWise</h2>
+    <div class="cart-icon" onclick="openCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
+</header>
+
+<!-- ===== SEARCH SECTION ===== -->
+<section class="products-wrapper">
+    <h2>Find Lowest Price</h2>
+    <p class="subtitle">Enter product and location to get the best deal</p>
+
+    <div class="search-container">
+        <input type="text" id="searchProduct" placeholder="Enter product name e.g., Samsung Galaxy S21">
+        <input type="text" id="searchLocation" placeholder="Enter your location e.g., Secunderabad">
+        <button onclick="searchProduct()">Find Price</button>
+    </div>
+
+    <div id="searchResults" class="product-section">
+        <!-- Dynamic product cards will appear here -->
+    </div>
+</section>
+
+<!-- ===== CART MODAL ===== -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p class="total">Total: ₹<span id="total-price">0</span></p>
+        <div class="cart-actions">
+            <button onclick="closeCart()">Close</button>
+            <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<footer>
+    <p>Lowest prices are recommended using JavaScript logic</p>
+</footer>
+</body>
+</html>

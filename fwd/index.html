@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location-Based Price Recommender System | PriceWise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+    <h2 class="logo">PriceWise</h2>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#deals">Sample Deals</a>
+        <a href="login.html" class="nav-btn">Login</a>
+    </nav>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Smart Price Comparison,<br>Based on Your Location</h1>
+        <p>
+            Compare prices of the same product across different locations and
+            get the most affordable recommendation instantly.
+        </p>
+
+        <!-- ===== HERO SEARCH FORM ===== -->
+        <div class="hero-search">
+            <input type="text" id="heroProduct" placeholder="Enter product name e.g., Samsung Galaxy S21">
+            <input type="text" id="heroLocation" placeholder="Enter your location e.g., Secunderabad">
+            <button onclick="heroSearch()">Find Lowest Price</button>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="about" id="about">
+    <h2>About the Project</h2>
+    <p>
+        This web application helps users identify the lowest-priced products
+        available in their selected location. While the frontend is built using
+        HTML, CSS, and JavaScript, the core recommendation logic dynamically
+        finds the best deals using structured data.
+    </p>
+</section>
+
+<!-- ===== FEATURES SECTION ===== -->
+<section class="features" id="features">
+    <h2>Key Features</h2>
+    <div class="feature-box">
+        <div class="feature">Location-Based Price Comparison</div>
+        <div class="feature">Same Product, Multiple Locations</div>
+        <div class="feature">Dynamic Best Price Highlight</div>
+        <div class="feature">Clean & User-Friendly Interface</div>
+    </div>
+</section>
+
+<!-- ===== SAMPLE DEALS SECTION ===== -->
+<section class="deals" id="deals">
+    <h2>Sample Deals by Location</h2>
+    <p class="subtitle">Same product, different prices across locations</p>
+
+    <div class="product-section">
+        <div class="product-card highlight">
+            <h3>Samsung Galaxy S21</h3>
+            <p>📍 Secunderabad</p>
+            <p>Store: Reliance Digital</p>
+            <p class="price">₹41,500</p>
+            <span class="tag best">Best Price</span>
+        </div>
+
+        <div class="product-card">
+            <h3>Samsung Galaxy S21</h3>
+            <p>📍 Kukatpally</p>
+            <p>Store: Croma</p>
+            <p class="price">₹42,800</p>
+        </div>
+
+        <div class="product-card highlight">
+            <h3>HP Pavilion Laptop</h3>
+            <p>📍 Kukatpally</p>
+            <p>Store: Croma</p>
+            <p class="price">₹61,000</p>
+            <span class="tag best">Best Price</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>College Mini Project | Location-Based Price Recommender</p>
+</footer>
+
+<script>
+/* ===== HERO SEARCH FUNCTION ===== */
+function heroSearch() {
+    const product = document.getElementById("heroProduct").value.trim();
+    const location = document.getElementById("heroLocation").value.trim();
+
+    if (!product || !location) {
+        alert("Please enter both product and location!");
+        return;
+    }
+
+    // Store in localStorage to prefill search in products.html
+    localStorage.setItem("searchProduct", product);
+    localStorage.setItem("searchLocation", location);
+
+    // Redirect to products page
+    window.location.href = "products.html";
+}
+</script>
+
+</body>
+</html>

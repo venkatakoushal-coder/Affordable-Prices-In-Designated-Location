@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account | Smart Prices Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-wrapper">
+    <div class="auth-card">
+
+        <!-- Left info panel -->
+        <div class="auth-info">
+            <h1>Join Smart Prices Finder</h1>
+            <p>
+                Create your account to compare prices across different locations
+                and get the best deal using smart recommendations.
+            </p>
+            <ul>
+                <li>✔ Location-based pricing</li>
+                <li>✔ Best price recommendations</li>
+                <li>✔ Fast & simple access</li>
+            </ul>
+        </div>
+
+        <!-- Registration form -->
+        <div class="auth-form">
+            <h2>Create Account</h2>
+
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email address" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+
+            <button onclick="register()">Register</button>
+
+            <p class="register-text">
+                Already have an account?
+                <a href="login.html">Login here</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function register() {
+    alert("Registration successful! Please login.");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
