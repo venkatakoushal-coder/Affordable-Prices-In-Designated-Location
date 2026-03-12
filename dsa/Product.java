@@ -1,5 +1,5 @@
-
 package dsa;
+
 import java.util.ArrayList;
 
 public class Product {
@@ -9,10 +9,21 @@ public class Product {
 
     public Product(String name) {
         this.name = name;
-        deals = new ArrayList<>();
+        this.deals = new ArrayList<>();
     }
 
     public void addDeal(Deal deal) {
-        deals.add(deal);
+        this.deals.add(deal);
+    }
+
+    // Get all unique locations for this product
+    public ArrayList<String> getLocations() {
+        ArrayList<String> locations = new ArrayList<>();
+        for (Deal d : deals) {
+            if (!locations.contains(d.location.toLowerCase())) {
+                locations.add(d.location.toLowerCase());
+            }
+        }
+        return locations;
     }
 }
